@@ -1,27 +1,18 @@
 <html>
     <head>
-        <title>Настин сайт</title>
+        <title>Django Girls blog</title>
     </head>
     <body>
-        <div>
-            <h1><a href="/">Этот сайт сделала Настя</a></h1>
-        </div>
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
 
-        <div>
-            <p>Настя молодец!</p>
-            <h2><a href="">Пост Любви</a></h2>
-            <p>ЛЮБЛЮ МУЖА</p>
-        </div>
-
-        <div>
-            <p>Сегодня 21 апреля</p>
-            <h2><a href="">Я сдам экзамены?</a></h2>
-            <p>Я надеюсь, что сдам! А потом мы напьёмся!</p>
-        </div>
-
-        <div>
-            <h2><a href="">P/S/</a></h2>
-            <p>Давай трахаться</p>
-        </div>
+{% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+{% endfor %}
     </body>
 </html>
